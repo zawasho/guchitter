@@ -1,0 +1,12 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-xs-12">
+      <h2>良かったことを報告する</h2>
+      <h5>何がありましたか？</h5>
+      <%= form_for(@good_thing, url: good_things_index_path) do |f|%>
+      <%= f.text_field :body %>
+      <%= f.submit '愚痴る' %>
+      <% end %>
+    </div>
+  </div>
+</div>
