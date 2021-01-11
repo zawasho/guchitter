@@ -3,9 +3,12 @@
     <div class = "col-xs-12">
       <h2>良かったことを報告する</h2>
       <h5>何がありましたか？</h5>
-      <%= form_for(@good_thing, url: good_things_index_path) do |f|%>
-      <%= f.text_field :body %>
-      <%= f.submit '愚痴る' %>
+      <%= form_for(@good_thing, url: good_things_path) do |f|%>
+      <h4>タイトル</h4>
+      <%= f.text_field :title %><br>
+      <h4>あったこと</h4>
+      <%= f.text_area :body %><br>
+      <%= f.submit '報告する!', class: "btn btn-primary col-xs-5" %>
       <% end %>
     </div>
   </div>
