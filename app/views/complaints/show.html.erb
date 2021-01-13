@@ -1,2 +1,28 @@
-<h1>Complaints#show</h1>
-<p>Find me in app/views/complaints/show.html.erb</p>
+<div class = "container">
+  <div class = "row">
+    <div class = "mx-auto">
+      <h2>愚痴の間</h2><br><br>
+      <p>思いを吐き出して落ち着きましょう</p>
+    </div>
+    <div class = "card w-50 mx-auto mt-4 shadow-lg">
+
+      <% @complaints.each do |c| %>
+        <tr>
+          <td><%= c.title %></td>
+          <td><%= c.body %></td>
+          <%= link_to "削除", complaint_path(c.id), method: :delete %>
+        </tr>
+        <% end %>
+
+        <% if @complaint.cheered_by?(current_user) %>
+        <p>
+          <%= link_to @complaint.cheers.count, cheer_path(@complaint), method: :delete, class: "glyphicon glyphicon-heart" %>
+          
+        <% else %>
+          <%= link_to @complaint.cheers.count, cheers_path(@complaint), method: :post, class: "glyphicon glyphicon-heart-empty" %>
+          <%# end %>
+        <% end %>
+        </p>
+    </div>
+    </div>
+  </div>

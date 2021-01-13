@@ -1,14 +1,15 @@
 <div class = "container">
   <div class = "row">
-    <div class = "col-xs-12">
-      <h2>愚痴る</h2>
+    <div class = "col-xs-12 mx-auto">
+      <h2><strong>愚痴る</strong></h2><br>
       <h5>何がありましたか？</h5>
-      <%= form_for(@complaint, url: complaints_path) do |f|%>
+
+      <%= form_for(@complaint) do |f| %>
       <h4>タイトル</h4>
-      <%= f.text_field :title %><br>
-      <h2>本文</h2>
-      <%= f.text_area :body %><br>
-      <%= f.submit '愚痴る！', class: "btn btn-success col-xs-5" %>
+      <%= f.text_field :title, placeholder: "例)課長に怒られた", size:"90x2" %><br>
+      <h2>あったこと</h2>
+      <%= f.text_area :body, placeholder: "例)仕事のミスが多くて毎日嫌になります...", size:"90x5" %><br>
+      <%= f.submit '愚痴る！', class: "btn btn-danger col-xs-5" %>
       <% end %>
     </div>
   </div>
