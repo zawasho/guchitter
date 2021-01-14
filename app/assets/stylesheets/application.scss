@@ -21,3 +21,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container-fluid {
+  position: relative;
+  background-color: #C0C0C0;
+}
+
+.navbar-header {
+  display: flex;
+}
+
+.navbar-left {
+  align-items: center;
+}
+
+.navbar-right {
+  position: absolute;
+  display: flex;
+  top: 6px;
+  right: 50px;
+  align-items: center;
+}

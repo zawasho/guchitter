@@ -28,6 +28,11 @@ class ComplaintsController < ApplicationController
     @complaints = Complaint.all
     @complaint = Complaint.find(params[:id])
   end
+    
+  def room
+    @complaints = Complaint.all
+  end
+  
 
   def edit
   end
@@ -35,7 +40,7 @@ class ComplaintsController < ApplicationController
   def destroy
     c = Complaint.find(params[:id])
     c.destroy
-    redirect_to complaints_path
+    redirect_to room_complaints_path
   end
 
   private

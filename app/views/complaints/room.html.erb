@@ -8,22 +8,26 @@
 
       <% @complaints.each do |c| %>
         <tr>
-          <td><%= c.title %></td>
-          <td><%= c.body %></td>
+          <p><%= c.title %></p>
+          <p><%= c.body %></p>
           <%= link_to "削除", complaint_path(c.id), method: :delete %>
         </tr>
-        <% end %>
-        
+
+
         <!--いいね機能-->
-        <% if @complaint.cheered_by?(current_user) %>
+        <% if c.cheered_by?(current_user) %>
         <p>
-          <%= link_to @complaint.cheers.count, cheer_path(@complaint), method: :delete, class: "glyphicon glyphicon-heart" %>
-          
+          <%= button_to c.cheers.count, cheer_path(c), method: :delete, class: "glyphicon glyphicon-heart" %>お疲れ様！
+          <%= button_to c.cheers.count, cheer_path(c), method: :delete, class: "glyphicon glyphicon-heart" %>
+
         <% else %>
-          <%= link_to @complaint.cheers.count, cheers_path(@complaint), method: :post, class: "glyphicon glyphicon-heart-empty" %>
-          
+          <%= button_to c.cheers.count, cheers_path(c), method: :post, class: "glyphicon glyphicon-heart-empty" %>お疲れ様！
+
+
         <% end %>
+
         </p>
+      <% end %>
     </div>
     </div>
   </div>

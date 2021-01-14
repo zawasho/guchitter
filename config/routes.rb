@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
 
+ 
   devise_for :users
 
   root to: 'homes#top'
   get '/about' => 'homes#about'
+  
+ resources :users do
+    
+   
+  end
 
 
  resources :complaints do
   collection do
     get '/thanks' => 'complaints#thanks'
+    get '/room' => 'complaints#room'
   end
 end
 
