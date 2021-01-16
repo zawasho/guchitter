@@ -16,15 +16,24 @@
 
 @import "bootstrap";
 
+@font-face{
+  font-family: 'timemachine-wa';
+  src: font-url('/assets/timemachine-wa.ttf')
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body{
+font-family: 'timemachine-wa';
+}
+
 .container-fluid {
   position: relative;
-  background-color: #C0C0C0;
+  background-color: #EEEEEE;
 }
 
 .navbar-header {
@@ -42,3 +51,10 @@
   right: 50px;
   align-items: center;
 }
+
+.navbar-right li {
+  margin: 10px;
+  list-style: none;
+}
+
+

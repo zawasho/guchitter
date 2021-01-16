@@ -1,14 +1,25 @@
 <div class ="container">
   <div class = "row">
-    <div class = "col-xs-offset-1 col-xs-10">
+    <div class = "mx-auto">
       <div class = "top-text">
-      <h2><strong>ぐちった〜</h2></strong>
-      <h4>ごゆっくりどうぞ</h4>
+      <h1><strong>ぐちった〜へようこそ！</h1></strong>
       
-      <%= link_to "愚痴りたい方", new_complaint_path, class: "btn btn-danger col-xs-5" %>
-      <%= link_to "良かったことを報告したい方", new_good_thing_path, class: "btn btn-primary col-xs-5" %>
-      <%= link_to "マイページ",  user_path(@user.id) %>
+
+      <%= link_to "愚痴りたい", new_complaint_path, class: "btn btn-danger col-xs-5" %>
+      <%= link_to "良かったことを報告したい", new_good_thing_path, class: "btn btn-primary col-xs-5" %>
+      
       </div>
+      <br><br>
+      <h4 class = "mx-auto"><使い方></h4><br>
+      <p>愚痴をこぼしたい時は「愚痴りたい」から、何か良い事があった時は「良かったことを報告したい」<br>
+        から呟いてみてください。<br>
+        また、「愚痴の間」「良かったことの間」を訪れると、投稿への評価ができます。<br>
+        同じ悩みを抱えている人がいらっしゃるかもしれません。<br><br>
+        このサイトでは傷の舐め合い、馴れ合い上等です。<br>
+        あなたの心の休憩所になれば幸いです。<br>
+        どうぞごゆっくりお過ごしください。<br><br>
+        管理人より
+      </p>
     </div>
   </div>
 </div>

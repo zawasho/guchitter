@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background-image: url("6f8335c36886ded6eb2a6f2d3d43f0dd.jpg");
+  background-size: cover;
+}
+
 .about-header {
   text-align: center;
   color: blue;
@@ -13,4 +18,9 @@
 
 .top-text {
   text-align: center;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
 }

@@ -21,18 +21,19 @@ class ComplaintsController < ApplicationController
   end
 
   def index
-    @complaints = Complaint.all
+    @complaints = Complaint.page(params[:page]).reverse_order
+    @user = current_user
   end
 
   def show
     @complaints = Complaint.all
     @complaint = Complaint.find(params[:id])
   end
-    
+
   def room
-    @complaints = Complaint.all
+    @complaints = Complaint.page(params[:page]).reverse_order
   end
-  
+
 
   def edit
   end
@@ -45,6 +46,6 @@ class ComplaintsController < ApplicationController
 
   private
     def complaint_params
-       params.require(:complaint).permit(:title, :body)
+       params.require(:complaint).permit(:title, :body, :profile_image)
     end
 end

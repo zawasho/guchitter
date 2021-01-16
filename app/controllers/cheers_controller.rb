@@ -1,8 +1,9 @@
 class CheersController < ApplicationController
 
   def create
-
+    c = Complaint.find(params[:complaint_id])
     cheer = current_user.cheers.new(complaint_id: params[:complaint_id])
+    binding.pry
     cheer.save
     redirect_to room_complaints_path
   end

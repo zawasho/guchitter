@@ -4,15 +4,20 @@
       <h2>皆様の愚痴</h2>
       <%= link_to "愚痴の間", room_complaints_path, class: "btn btn-primary" %>はこちらから
     </div>
-    <div class = "card w-50 mx-auto mt-4 shadow-lg">
+    <div class = "mx-auto">
 
       <% @complaints.each do |c| %>
-
-          <h6><%= c.title %></h>
+        <div class = "card w-50 mx-auto mt-4 shadow-lg">
+          <p><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg" %></p>
+          <p><%= c.user.name %></p>
+          <p><%= c.title %></p>
           <p><%= c.body %></p>
+        </div>
+        
           
 
         <% end %>
+        
 
 
     </div>

@@ -2,32 +2,50 @@
   <div class = "row">
     <div class = "mx-auto">
       <h2>愚痴の間</h2><br><br>
-      <p>思いを吐き出して落ち着きましょう</p>
+      <p>思いを吐き出して落ち着きましょう</p><br><br>
+      <p>共感できる投稿にはボタンを押して見ましょう</p>
     </div>
-    <div class = "card w-50 mx-auto mt-4 shadow-lg">
+    <div class = "mx-auto">
 
       <% @complaints.each do |c| %>
         <tr>
+          <div class = "card mx-auto mt-4 shadow-lg">
           <p><%= c.title %></p>
           <p><%= c.body %></p>
           <%= link_to "削除", complaint_path(c.id), method: :delete %>
+          
         </tr>
 
 
         <!--いいね機能-->
         <% if c.cheered_by?(current_user) %>
-        <p>
-          <%= button_to c.cheers.count, cheer_path(c), method: :delete, class: "glyphicon glyphicon-heart" %>お疲れ様！
-          <%= button_to c.cheers.count, cheer_path(c), method: :delete, class: "glyphicon glyphicon-heart" %>
+        <table>
+          <tr>
+          <td><%= button_to c.cheers.count, cheer_path(c), method: :delete %>お疲れ様！</td>
+          <td><%= button_to c.cheers.count, cheer_path(c), method: :delete %>めっちゃ分かる！</td>
+          <td><%= button_to c.cheers.count, cheer_path(c), method: :delete %>元気出して！</td>
+          <td><%= button_to c.cheers.count, cheer_path(c), method: :delete %>忘れよう！</td>
+          </tr>
+        </table>
 
         <% else %>
-          <%= button_to c.cheers.count, cheers_path(c), method: :post, class: "glyphicon glyphicon-heart-empty" %>お疲れ様！
+        <table>
+          <tr>
+          <td><%= button_to c.cheers.count, cheers_path(c), method: :post %>お疲れ様！</td>
+          <td><%= button_to c.cheers.count, cheers_path(c), method: :post %>めっちゃ分かる！</td>
+          <td><%= button_to c.cheers.count, cheers_path(c), method: :post %>元気出して！</td>
+          <td><%= button_to c.cheers.count, cheers_path(c), method: :post %>忘れよう！</td>
+          </tr>
+        </table>
+          
 
 
         <% end %>
 
-        </p>
+        
       <% end %>
+      </div>
+      <%= paginate @complaints %>
     </div>
     </div>
   </div>
