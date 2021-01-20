@@ -4,9 +4,9 @@
       <h2>皆様の良かったこと</h2>
       <%= link_to "ポジティブの間", space_good_things_path, class: "btn btn-primary" %>
     </div>
-    
+
     <div class = "mx-auto">
-      
+
       <% @good_things.each do |gt| %>
         <div class = "card w-50 mx-auto mt-4 shadow-lg">
           <p><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg" %></p>
@@ -15,7 +15,7 @@
           <p><%= gt.body %></p>
         </div>
         <% end %>
-        
+
     </div>
   </div>
 </div>
