@@ -20,10 +20,15 @@ class GoodThingsController < ApplicationController
   end
 
   def index
-    @good_things = GoodThing.all
+    @good_things = GoodThing.page(params[:page]).reverse_order
+    @user = current_user
   end
 
   def show
+  end
+  
+  def space
+    @good_things = GoodThing.page(params[:page]).reverse_order
   end
 
   def edit

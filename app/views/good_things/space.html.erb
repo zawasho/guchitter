@@ -1,0 +1,38 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "mx-auto">
+      <h2><strong>ポジティブの間</strong></h2><br><br>
+      <p>良かったことを共有しましょう</p><br><br>
+      <p>共感できる投稿にはボタンを押してみましょう</p>
+    </div>
+    <div class = "mx-auto timeline">
+
+      <% @good_things.each do |gt| %>
+
+      <div class = "card mx-auto shadow-lg">
+        <table>
+          <tr>
+            <td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg" %></td>
+            <td><%= gt.user.name %></td>
+          </tr>
+        </table>
+
+
+        <tr>
+          <p><%= gt.title %></p>
+          <p><%= gt.body %></p>
+          <%= link_to "削除", good_thing_path(gt.id), method: :delete %>
+      　</tr>
+
+        <!--非同期通信部分テンプレート-->
+        <div id = "gt_<%= gt.id %>">
+          <div class = "favorite-btn"><%= render "favorites/favorite-btn", gt: gt %></div>
+        </div>
+
+      </div>
+      <% end %>
+
+      <%= paginate @good_things %>
+    </div>
+    </div>
+  </div>

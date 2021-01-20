@@ -22,9 +22,11 @@ end
  resources :good_things do
   collection do
     get '/thanks' => 'good_things#thanks'
+    get '/space' => 'good_things#space'
    end
  end
 
  resources :cheers, only: [:create, :destroy]
+ 
  resources :favorites, only: [:create, :destroy]
  end

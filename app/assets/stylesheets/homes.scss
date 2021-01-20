@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-image: url("6f8335c36886ded6eb2a6f2d3d43f0dd.jpg");
+  background-image: image-url("6f8335c36886ded6eb2a6f2d3d43f0dd.jpg");
+   background-repeat: no-repeat;
   background-size: cover;
 }
 

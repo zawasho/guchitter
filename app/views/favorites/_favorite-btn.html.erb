@@ -1,0 +1,18 @@
+<!--いいね機能(ポジティブ)-->
+    <% if gt.favorited_by?(current_user) %>
+    <table>
+      <tr>
+      <td><%= button_to gt.favorites.count, favorite_path(gt), method: :delete, remote: true %>いいね！</td>
+      
+      </tr>
+    </table>
+
+    <% else %>
+    <table>
+      <tr>
+      <td><%= button_to gt.favorites.count, favorites_path(good_thing_id: gt.id), method: :post, remote: true %>いいね！</td>
+      
+      </tr>
+    </table>
+
+    <% end %>
