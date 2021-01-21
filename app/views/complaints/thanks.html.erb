@@ -1,13 +1,13 @@
-<html>
-  <head></head>
-  <body>
-  <div class = "mx-auto text-center">
-    <h2 class = "text-center">投稿しました！</h2>
 
-    <script type="text/javascript" src="thanks.js"></script>
-   
+  <div class = "mx-auto text-center">
+    <h1 class = "mx-auto complete">投稿しました！</h1>
+    <h3>リストを訪れて他の方の投稿も見てみましょう</h3>
+
+    <div id="divthanks" class="mx-auto text-center">今日もお疲れ様でした</div>
+    <div>
+      <% values = ['今日も一日お疲れ様でした', 'ゆっくりお休みください', '美味しいご飯を食べましょう', 'お風呂でのんびりしましょう'] %>
+      <%= values[rand(0...values.count)] %>
+    </div>
     <%= link_to "愚痴リストへ", complaints_path, class: "btn btn-danger col-xs-5" %>
     <%= link_to "良かったことリストへ", good_things_path, class: "btn btn-primary col-xs-5" %>
   </div>
-  </body>
-</html>

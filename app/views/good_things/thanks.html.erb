@@ -1,11 +1,14 @@
 <html>
   <head></head>
   <body>
-    <h3 class = "mx-auto">投稿しました！</h3>
+  <div class = "mx-auto text-center">
+    <h1 class = "mx-auto complete">投稿しました！</h1>
+    <h3>リストを訪れて他の方の投稿も見てみましょう</h3>
 
     <script type="text/javascript" src="thanks.js"></script>
 
-  <%= link_to "愚痴リストへ", complaints_path, class: "btn btn-danger col-xs-5" %>
-  <%= link_to "良かったことリストへ", good_things_path, class: "btn btn-primary col-xs-5" %>
+    <%= link_to "愚痴リストへ", complaints_path, class: "btn btn-danger col-xs-5" %>
+    <%= link_to "良かったことリストへ", good_things_path, class: "btn btn-primary col-xs-5" %>
+  </div>
   </body>
 </html>

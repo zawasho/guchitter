@@ -3,14 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-image: image-url("6f8335c36886ded6eb2a6f2d3d43f0dd.jpg");
-   background-repeat: no-repeat;
+  // ↓　ベンチの風景画像
+  // background-image: image-url("6f8335c36886ded6eb2a6f2d3d43f0dd.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
 .about-header {
   text-align: center;
-  color: blue;
+  margin: 50px;
 }
 
 .about-text {
@@ -24,4 +25,12 @@ body {
 .container {
   height: 100vh;
   width: 100vw;
+}
+
+.complain {
+  color: #FF0000;
+}
+
+.tweet {
+  color: #0000FF;
 }

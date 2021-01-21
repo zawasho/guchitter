@@ -29,6 +29,7 @@
 
 body{
 font-family: 'timemachine-wa';
+background-color: #CCFF99;
 }
 
 .container-fluid {
@@ -55,6 +56,17 @@ font-family: 'timemachine-wa';
 .navbar-right li {
   margin: 10px;
   list-style: none;
+}
+
+footer{
+  width: 100%;
+  background-color: #DDDDDD;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  //footerを下部に固定 
+  position: absolute;
+  bottom: 0; 
 }
 
 
