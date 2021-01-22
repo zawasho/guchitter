@@ -17,8 +17,10 @@
 @import "bootstrap";
 
 @font-face{
-  font-family: 'timemachine-wa';
-  src: font-url('timemachine-wa.ttf')
+  // font-family: 'timemachine-wa';
+  // src: font-url('timemachine-wa.ttf')
+  font-family: 'gomarice_mukasi_mukasi';
+  src: font-url('gomarice_mukasi_mukasi.ttf');
 }
 
 * {
@@ -28,8 +30,8 @@
 }
 
 body{
-font-family: 'timemachine-wa';
-background-color: #CCFF99;
+  font-family: 'gomarice_mukasi_mukasi';
+  background-color: #CCFF99;
 }
 
 .container-fluid {
@@ -63,7 +65,7 @@ footer{
   background-color: #DDDDDD;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
   //footerを下部に固定 
   position: absolute;
   bottom: 0; 

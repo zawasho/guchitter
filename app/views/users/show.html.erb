@@ -1,31 +1,36 @@
 <div class = "container">
-  <div class = "row">
-     <h2 class="header-background col-xs-2 col-xs-offset-2">マイページ</h2>
+  <div class = "row mt-5">
+     <h1 class="header-background mx-auto">マイページ</h1>
   </div>
-
-  <div class = "row">
-    <strong>登録情報</strong>
-  </div>
-
-  <div class = "row">
-    <div class = "col-xs-7 col-xs-offset-1">
-      <table class="table table-hover table-inverse">
-        <tbody>
-          <tr>
-            <td class = "th">アイコン</td>
-            <td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg" %></td>
-          </tr>
-          <tr>
-            <td class = "th">お名前(ニックネーム)</td>
-            <td><%= @user.name %></td>
-          </tr>
-          <tr>
-            <td class = "th">メールアドレス</td>
-            <td><%= @user.email %></td>
-          </tr>
-          <%= link_to "編集", edit_user_path, class: "btn btn-primary col-xs-5" %>
-        </tbody>
-      </table>
+  
+  <div class = "registration-info">
+    
+    <div class = "row">
+      <div class = "mx-auto text-center">
+      <h1><strong>登録情報</strong></h1>
+      </div>
+    </div>
+  
+    <div class = "row">
+      <div class = "mx-auto text-center">
+        <table class="table table-hover table-inverse">
+          <tbody>
+            <tr>
+              <td class = "th">アイコン</td>
+              <td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg" %></td>
+            </tr>
+            <tr>
+              <td class = "th">お名前(ニックネーム)</td>
+              <td><%= @user.name %></td>
+            </tr>
+            <tr>
+              <td class = "th">メールアドレス</td>
+              <td><%= @user.email %></td>
+            </tr>
+            <%= link_to "変える", edit_user_path, class: "btn btn-primary col-xs-5" %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

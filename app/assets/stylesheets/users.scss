@@ -10,9 +10,16 @@
 
 .header-background {
   background-color: #EEEEEE;
+  text-align: center;
 }
 
 .edit-background {
   background-color: #EEEEEE;
   margin: auto;
+}
+
+.registration-info {
+  text-align: center;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
 }

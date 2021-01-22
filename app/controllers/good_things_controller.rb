@@ -1,5 +1,4 @@
 class GoodThingsController < ApplicationController
-
   before_action :authenticate_user!
 
   def new
@@ -16,23 +15,20 @@ class GoodThingsController < ApplicationController
     end
   end
 
-  def thanks
-  end
+  def thanks; end
 
   def index
     @good_things = GoodThing.page(params[:page]).reverse_order
     @user = current_user
   end
 
-  def show
-  end
-  
+  def show; end
+
   def space
     @good_things = GoodThing.page(params[:page]).reverse_order
   end
 
-  def edit
-  end
+  def edit; end
 
   def destroy
     gt = GoodThing.find(params[:id])
@@ -41,6 +37,7 @@ class GoodThingsController < ApplicationController
   end
 
   private
+
   def good_thing_params
     params.require(:good_thing).permit(:title, :body)
   end

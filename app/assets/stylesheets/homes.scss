@@ -4,7 +4,7 @@
 
 body {
   // ↓　ベンチの風景画像
-  // background-image: image-url("6f8335c36886ded6eb2a6f2d3d43f0dd.jpg");
+  background-image: image-url("6f8335c36886ded6eb2a6f2d3d43f0dd.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -12,14 +12,20 @@ body {
 .about-header {
   text-align: center;
   margin: 50px;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
 }
 
 .about-text {
   text-align: center;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
 }
 
 .top-text {
   text-align: center;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
 }
 
 .container {

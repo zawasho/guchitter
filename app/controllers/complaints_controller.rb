@@ -1,5 +1,4 @@
 class ComplaintsController < ApplicationController
-
   before_action :authenticate_user!
 
   def new
@@ -16,9 +15,7 @@ class ComplaintsController < ApplicationController
     end
   end
 
-  def thanks
-
-  end
+  def thanks; end
 
   def index
     @complaints = Complaint.page(params[:page]).reverse_order
@@ -34,9 +31,7 @@ class ComplaintsController < ApplicationController
     @complaints = Complaint.page(params[:page]).reverse_order
   end
 
-
-  def edit
-  end
+  def edit; end
 
   def destroy
     c = Complaint.find(params[:id])
@@ -45,7 +40,8 @@ class ComplaintsController < ApplicationController
   end
 
   private
-    def complaint_params
-       params.require(:complaint).permit(:title, :body, :profile_image)
-    end
+
+  def complaint_params
+    params.require(:complaint).permit(:title, :body, :profile_image)
+  end
 end

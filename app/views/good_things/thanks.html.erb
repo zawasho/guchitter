@@ -1,14 +1,24 @@
-<html>
-  <head></head>
-  <body>
-  <div class = "mx-auto text-center">
+
+  <div class = "thanks mx-auto text-center">
     <h1 class = "mx-auto complete">投稿しました！</h1>
     <h3>リストを訪れて他の方の投稿も見てみましょう</h3>
 
-    <script type="text/javascript" src="thanks.js"></script>
-
     <%= link_to "愚痴リストへ", complaints_path, class: "btn btn-danger col-xs-5" %>
     <%= link_to "良かったことリストへ", good_things_path, class: "btn btn-primary col-xs-5" %>
+    
+    <h2 class="mx-auto text-center single-word"><strong>明日の運勢</h2></strong>
+    <h3>
+      <% values = ['吉', '大吉', 'めっちゃ大吉', 'ものすごく大吉', '神ってる'] %>
+      <%= values[rand(0...values.count)] %>
+    </h3>
+    
+    <h2 class="mx-auto text-center single-word"><strong>ラッキーパーソン</h2></strong>
+    <h3>
+      <% people = ['そのへんの人', '家族の誰か', '学校・職場の同僚', 'コンビニの店員', '田中さん'] %>
+      <%= people[rand(0...people.count)] %>
+    </h3>
+    
+    
+    
   </div>
-  </body>
-</html>
+  
