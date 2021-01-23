@@ -17,7 +17,7 @@
           <tbody>
             <tr>
               <td class = "th">アイコン</td>
-              <td><%= attachment_image_tag @user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg" %></td>
+              <td><%= attachment_image_tag @user, :profile_image, format: "png" %></td>
             </tr>
             <tr>
               <td class = "th">お名前(ニックネーム)</td>

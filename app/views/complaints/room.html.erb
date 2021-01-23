@@ -8,28 +8,28 @@
     </div>
     <div class = "mx-auto text-center timeline">
 
-      <% @complaints.each do |c| %>
+      <% @complaints.each do |complaint| %>
 
       <div class = "card mx-auto shadow-lg">
         <table>
           <tr>
             <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", format: 'no_image.jpg' %></p>
-            <p><%= c.user.name %></p>
+            <p><%= complaint.user.name %></p>
           </tr>
         </table>
 
         <br>
         <tr>
-          <p><%= c.title %></p>
-          <p><%= c.body %></p>
+          <p><%= complaint.title %></p>
+          <p><%= complaint.body %></p>
           <% if @user_id = current_user.id %>
-            <%= link_to "削除", complaint_path(c.id), method: :delete %>
+            <%= link_to "削除", complaint_path(complaint.id), method: :delete %>
           <% end %>
       　</tr>
 
         <!--非同期通信部分テンプレート-->
-        <div id = "c_<%= c.id %>">
-          <div class = "cheer-btn"><%= render "cheers/cheer-btn", c: c %></div>
+        <div id = "complaint_<%= complaint.id %>">
+          <div class = "cheer-btn"><%= render "cheers/cheer-btn", complaint: complaint %></div>
         </div>
 
       </div>

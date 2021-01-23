@@ -2,12 +2,12 @@
   <div class = "row">
       <div class = "top-text">
         <h1 class = "text-center"><strong>Share Diaryへようこそ！</h1></strong>
-        
-  
+
+
         <%= link_to "愚痴りたい", new_complaint_path, class: "btn btn-danger col-xs-5" %>
         <%= link_to "良かったことを報告したい", new_good_thing_path, class: "btn btn-primary col-xs-5" %>
-        
-        
+
+
         <br><br>
         <h3><使い方></h3><br>
         <p>愚痴をこぼしたい時は<strong class = "complain">「愚痴りたい」</strong>から、<br>
@@ -22,5 +22,45 @@
           管理人より
         </p>
       </div>
+
+    <div class = "mx-auto text-center ranking">
+      <% @all_ranks.each.with_index(1) do |complaint, i| %>
+        <div class = "card mx-auto shadow-lg">
+          <table>
+            <tr>
+              第
+              i
+              位
+              <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", format: 'no_image.jpg' %></p>
+              <p><%= complaint.user.name %></p>
+            </tr>
+          </table>
+            <tr>
+              <p><%= complaint.title %></p>
+              <p><%= complaint.body %></p>
+            </tr>
+
+        </div>
+      <% end %>
+      
+      <% @all_rankings.each.with_index(1) do |good_thing, i| %>
+        <div class = "card mx-auto shadow-lg">
+          <table>
+            <tr>
+              第
+              i
+              位
+              <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", format: 'no_image.tag' %></p>
+              <p><%= good_thing.user.name %></p>
+            </tr>
+          </table>
+            <tr>
+              <p><%= good_thing.title %></p>
+              <p><%= good_thing.body %></p>
+            </tr>
+        </div>
+        <% end %>
+      
+    </div>
   </div>
 </div>
