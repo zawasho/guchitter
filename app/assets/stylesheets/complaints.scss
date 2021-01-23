@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .timeline {
-  height: 750px;
+  width: 400px;
+  height: 700px;
   overflow: scroll;
 }
 
@@ -18,4 +19,8 @@
 
 .single-word {
   margin-top: 70px;
+}
+
+.cheer-btn {
+  text-align: center;
 }

@@ -22,13 +22,13 @@ class GoodThingsController < ApplicationController
     @user = current_user
   end
 
-  def show; end
-
   def space
     @good_things = GoodThing.page(params[:page]).reverse_order
+    @user = current_user
   end
 
-  def edit; end
+  def edit
+  end
 
   def destroy
     gt = GoodThing.find(params[:id])

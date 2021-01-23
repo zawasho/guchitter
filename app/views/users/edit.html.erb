@@ -2,33 +2,34 @@
   <div class = "row">
      <h2 class="header-background mx-auto">登録情報編集</h2>
   </div>
+
   <div class = "edit-background">
-    <%= form_with model:@user, url:user_path(@user), local:true do |f| %>
-    
-    <div class = "row mx-auto">
-      <div class = "col-xs-2 col-xs-offset-2">
-        <%= f.label :"お名前(ニックネーム)", class: "col-xs-4" %>
-        <%= f.text_field :name %>
+    <%= form_for (@user) do |f| %>
+
+      <div class = "row mx-auto">
+        <div class = "col-xs-2 col-xs-offset-2">
+          <%= f.label :profile_image, class: "col-xs-4" %>
+          <%= f.attachment_field :profile_image %>
+        </div>
       </div>
-    </div>
-    
-    <div class = "row mx-auto">
-      <div class = "col-xs-2 col-xs-offset-2">
-        <%= f.label :"アイコン", class: "col-xs-4" %>
-        <%= f.attachment_field :profile_image %>
+
+      <div class = "row mx-auto">
+        <div class = "col-xs-2 col-xs-offset-2">
+          <%= f.label :"お名前(ニックネーム)", class: "col-xs-4" %>
+          <%= f.text_field :name %>
+        </div>
       </div>
-    </div>
-    
-    <div class = "row mx-auto">
-      <div class = "col-xs-3 col-xs-offset-1">
-        <%= f.label :"メールアドレス", class: "col-xs-4" %>
-        <%= f.text_field :email %>
+
+      <div class = "row mx-auto">
+        <div class = "col-xs-3 col-xs-offset-1">
+          <%= f.label :"メールアドレス", class: "col-xs-4" %>
+          <%= f.text_field :email %>
+        </div>
       </div>
-    </div>
-    
-    <div class = "row mx-auto">
-      <%= f.submit "変更する", class: "btn btn-success" %>
-    </div>
+
+      <div class = "row mx-auto">
+        <%= f.submit "変更する", class: "btn btn-success" %>
+      </div>
       <% end %>
     </div>
   </div>

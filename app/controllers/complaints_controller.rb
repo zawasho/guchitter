@@ -15,7 +15,8 @@ class ComplaintsController < ApplicationController
     end
   end
 
-  def thanks; end
+  def thanks
+  end
 
   def index
     @complaints = Complaint.page(params[:page]).reverse_order
@@ -29,6 +30,7 @@ class ComplaintsController < ApplicationController
 
   def room
     @complaints = Complaint.page(params[:page]).reverse_order
+    @user = current_user
   end
 
   def edit; end

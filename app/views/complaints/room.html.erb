@@ -1,28 +1,30 @@
 <div class = "container">
-  <div class = "row">
+  <div class = "row complaint-room">
     <div class = "mx-auto mt-5">
       <h1><strong>愚痴の間</strong></h1><br><br>
       <p>思いを吐き出して落ち着きましょう</p><br><br>
       <p>共感できる投稿にはボタンを押してましょう</p><br><br>
       <p>投稿はスクロールできます</p>
     </div>
-    <div class = "mx-auto timeline">
+    <div class = "mx-auto text-center timeline">
 
       <% @complaints.each do |c| %>
 
       <div class = "card mx-auto shadow-lg">
         <table>
           <tr>
-            <td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg" %></td>
-            <td><%= c.user.name %></td>
+            <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", format: 'no_image.jpg' %></p>
+            <p><%= c.user.name %></p>
           </tr>
         </table>
 
-
+        <br>
         <tr>
           <p><%= c.title %></p>
           <p><%= c.body %></p>
-          <%= link_to "削除", complaint_path(c.id), method: :delete %>
+          <% if @user_id = current_user.id %>
+            <%= link_to "削除", complaint_path(c.id), method: :delete %>
+          <% end %>
       　</tr>
 
         <!--非同期通信部分テンプレート-->

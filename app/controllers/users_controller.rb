@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def show
     @user = User.find(params[:id])
   end
@@ -9,10 +10,9 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user = current_user
     if @user.update(user_params)
       flash[:notice] = '変更完了！'
-      redirect_to root_path
+      redirect_to user_path
     else
       render 'edit'
     end
@@ -21,6 +21,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :post_image)
+    params.require(:user).permit(:name, :email, :profile_image)
   end
 end

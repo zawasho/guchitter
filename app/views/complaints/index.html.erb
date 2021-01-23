@@ -8,7 +8,7 @@
 
       <% @complaints.each do |c| %>
         <div class = "card mx-auto shadow-lg">
-          <p><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg" %></p>
+          <p><%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %></p>
           <p><%= c.user.name %></p>
           <p><%= c.title %></p>
           <p><%= c.body %></p>
