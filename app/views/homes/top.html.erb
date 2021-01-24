@@ -23,13 +23,14 @@
         </p>
       </div>
 
-    <div class = "mx-auto text-center ranking">
+    <div class = "mx-auto text-center ranks">
+      <h2>愚痴ランキング</h2>
       <% @all_ranks.each.with_index(1) do |complaint, i| %>
         <div class = "card mx-auto shadow-lg">
           <table>
             <tr>
               第
-              i
+              <%= i %>
               位
               <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", format: 'no_image.jpg' %></p>
               <p><%= complaint.user.name %></p>
@@ -42,15 +43,17 @@
 
         </div>
       <% end %>
-      
+      </div>
+    <div class = "mx-auto text-center rankings">
+      <h2>良かったことランキング</h2>
       <% @all_rankings.each.with_index(1) do |good_thing, i| %>
         <div class = "card mx-auto shadow-lg">
           <table>
             <tr>
               第
-              i
+              <%= i %>
               位
-              <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", format: 'no_image.tag' %></p>
+              <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %></p>
               <p><%= good_thing.user.name %></p>
             </tr>
           </table>
@@ -60,7 +63,7 @@
             </tr>
         </div>
         <% end %>
-      
+
     </div>
   </div>
 </div>

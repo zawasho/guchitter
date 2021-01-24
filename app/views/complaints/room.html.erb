@@ -1,10 +1,25 @@
 <div class = "container">
   <div class = "row complaint-room">
-    <div class = "mx-auto mt-5">
+    <div class = "mx-auto mt-3 complaint-text">
       <h1><strong>愚痴の間</strong></h1><br><br>
       <p>思いを吐き出して落ち着きましょう</p><br><br>
       <p>共感できる投稿にはボタンを押してましょう</p><br><br>
       <p>投稿はスクロールできます</p>
+
+      <!--<%#= search_form_for @q do |f| %>-->
+      <!--  <%#= f.label :name, "ユーザー名" %>-->
+      <!--  <%#= f.search_field :name_cont %>-->
+
+      <!--  <%#= f.submit "検索" %>-->
+      <!--<%# end %>-->
+      <thead>
+      <br><br>
+        <tr>
+          <h3>投稿並び替え→</h3>
+          <th><%= sort_link(@q, :user_name, "名前順") %></th>
+        </tr>
+      </thead>
+
     </div>
     <div class = "mx-auto text-center timeline">
 
@@ -13,7 +28,7 @@
       <div class = "card mx-auto shadow-lg">
         <table>
           <tr>
-            <p><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", format: 'no_image.jpg' %></p>
+            <p><%= attachment_image_tag complaint.user, :profile_image, size:'100x100', fallback: "no_image.jpg" %></p>
             <p><%= complaint.user.name %></p>
           </tr>
         </table>
@@ -22,6 +37,7 @@
         <tr>
           <p><%= complaint.title %></p>
           <p><%= complaint.body %></p>
+          <p><%= complaint.created_at %></p>
           <% if @user_id = current_user.id %>
             <%= link_to "削除", complaint_path(complaint.id), method: :delete %>
           <% end %>

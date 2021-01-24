@@ -1,1 +1,1 @@
-$("#c_<%= @complaint.id %> table").html("<%= j(render 'cheers/cheer-btn', c: @complaint) %>");
+$("#complaint_<%= @complaint.id %> table").html("<%= j(render 'cheers/cheer-btn', complaint: @complaint) %>");

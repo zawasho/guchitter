@@ -29,11 +29,27 @@ class ComplaintsController < ApplicationController
   end
 
   def room
-    @complaints = Complaint.page(params[:page]).reverse_order
+    # sort_key = params[:q][:name]
+    @q = Complaint.ransack(params[:q])
+    if params[:q].present?
+      @q = Complaint
+        .joins(:user)
+        .page(params[:page])
+        .ransack(params[:q])
+      @complaints = @q.result
+    else
+     
+      @complaints = Complaint.page(params[:page]).reverse_order
+    end
+   
+
     @user = current_user
+    # @q = User.ransack(params[:q])
+    # @users = @q.result(distinct: true)
   end
 
-  def edit; end
+  def edit
+  end
 
   def destroy
     c = Complaint.find(params[:id])
