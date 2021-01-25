@@ -1,27 +1,35 @@
 <div class = "container">
   <div class = "row">
-    <div class = "mx-auto mt-5">
-      <h2><strong>ポジティブの間</strong></h2><br><br>
+    <div class = "mx-auto mt-3 good_thing-text">
+      <h2><strong>ポジティブの間<i class="far fa-smile-beam"></i></strong></h2><br><br>
       <p>良かったことを共有しましょう</p><br><br>
       <p>共感できる投稿にはボタンを押してみましょう</p><br><br>
       <p>投稿をスクロールできます</p>
+
+      <br><br>
+          <!--ソート機能-->
+          <h3>投稿を並び替える<i class="fas fa-exchange-alt"></i></h3>
+          <p><%= sort_link(@q, :user_name, "名前順") %></p>
+          <p><%= sort_link(@q, :created_at, "投稿順") %></p>
+
     </div>
-    <div class = "mx-auto timeline">
+    <div class = "mx-auto text-center timeline">
 
       <% @good_things.each do |gt| %>
 
       <div class = "card mx-auto shadow-lg">
         <table>
           <tr>
-            <td><%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg" %></td>
-            <td><%= gt.user.name %></td>
+            <p><%= attachment_image_tag @user, :profile_image, size:'80x80', fallback: "no_image.jpg" %></p>
+            <p><%= gt.user.name %></p>
           </tr>
         </table>
 
-
+        <br>
         <tr>
           <p><%= gt.title %></p>
           <p><%= gt.body %></p>
+          <p><%= gt.created_at %></p>
           <%= link_to "削除", good_thing_path(gt.id), method: :delete %>
       　</tr>
 

@@ -23,7 +23,19 @@ class GoodThingsController < ApplicationController
   end
 
   def space
-    @good_things = GoodThing.page(params[:page]).reverse_order
+    # ransack使用宣言
+    
+    @q = GoodThing.ransack(params[:q])
+    if params[:q].present?
+      @q = GoodThing
+        .joins(:user)
+        .page(params[:page])
+        .ransack(params[:q])
+      @good_things = @q.result
+    else
+      @good_things = GoodThing.page(params[:page]).reverse_order
+    end
+    
     @user = current_user
   end
 

@@ -6,13 +6,13 @@
     <%= link_to "愚痴リストへ", complaints_path, class: "btn btn-danger col-xs-5" %>
     <%= link_to "良かったことリストへ", good_things_path, class: "btn btn-primary col-xs-5" %>
     
-    <h2 class="mx-auto text-center single-word"><strong>明日の運勢</h2></strong>
+    <h2 class="mx-auto text-center single-word"><strong>運勢<i class="far fa-laugh-beam"></i></h2></strong>
     <h3>
       <% values = ['吉', '大吉', 'めっちゃ大吉', 'ものすごく大吉', '神ってる'] %>
       <%= values[rand(0...values.count)] %>
     </h3>
     
-    <h2 class="mx-auto text-center single-word"><strong>ラッキーパーソン</h2></strong>
+    <h2 class="mx-auto text-center single-word"><strong>ラッキーパーソン<i class="fas fa-user-friends"></i></h2></strong>
     <h3>
       <% people = ['そのへんの人', '家族の誰か', '学校・職場の同僚', 'コンビニの店員', '田中さん'] %>
       <%= people[rand(0...people.count)] %>

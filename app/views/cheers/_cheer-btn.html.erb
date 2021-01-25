@@ -2,14 +2,17 @@
     <% if complaint.cheered_by?(current_user) %>
     <table>
       <tr>
-        <td><%= button_to complaint.cheers.count, cheer_path(complaint), method: :delete, remote: true %>お疲れ様！</td>
+        <td><%= link_to complaint.cheers.count, cheer_path(complaint), method: :delete, remote: true, :class => "fas fa-glass-cheers" %></td>
+        <td>お疲れ様！</td>
       </tr>
     </table>
 
     <% else %>
     <table>
       <tr>
-        <td><%= button_to complaint.cheers.count, cheers_path(complaint_id: complaint.id), method: :post, remote: true %>お疲れ様！</td>
+        <td><%= link_to complaint.cheers.count, cheers_path(complaint_id: complaint.id), method: :post, remote: true, :class => "fas fa-glass-cheers" %></td>
+        <td>お疲れ様！</td>
       </tr>
     </table>
+    
     <% end %>

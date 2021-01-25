@@ -7,7 +7,7 @@
     <div class = "mx-auto timeline">
 
       <% @complaints.each do |c| %>
-        <div class = "card mx-auto shadow-lg">
+        <div class = "card mx-auto text-center shadow-lg">
           <p><%= attachment_image_tag c.user, :profile_image, size:'100x100', fallback: "no_image.jpg" %></p>
           <p><%= c.user.name %></p>
           <p><%= c.title %></p>

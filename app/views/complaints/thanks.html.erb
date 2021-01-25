@@ -7,13 +7,13 @@
     <%= link_to "愚痴リストへ", complaints_path, class: "btn btn-danger col-xs-5" %>
     <%= link_to "良かったことリストへ", good_things_path, class: "btn btn-primary col-xs-5" %>
 
-    <h2 class="mx-auto text-center single-word">今日の一言</h2>
+    <h2 class="mx-auto text-center single-word">今日の一言<i class="fas fa-mug-hot"></i></h2>
       <h3>
         <% values = ['今日も一日お疲れ様でした!', 'ゆっくりお休みください', '美味しいご飯を食べましょう', 'お風呂でのんびりしましょう', 'ゆるーく頑張りましょう'] %>
         <%= values[rand(0...values.count)] %>
       </h3>
     
-    <h2 class="mx-auto text-center single-word"><strong>おすすめアイテム</h2></strong>
+    <h2 class="mx-auto text-center single-word"><strong>おすすめアイテム<i class="fas fa-gift"></i></h2></strong>
       <h3>
         <% goods = ['入浴剤', 'ハーブティ', '抱き枕', 'ぬいぐるみ', 'コーヒー'] %>
         <%= goods[rand(0...goods.count)] %>

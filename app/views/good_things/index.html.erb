@@ -2,19 +2,20 @@
   <div class = "row">
     <div class = "mx-auto">
       <h1>皆様の良かったこと</h1><br><br>
-      <%= link_to "ポジティブの間", space_good_things_path, class: "btn btn-primary" %>
+      <%= link_to "ポジティブの間", space_good_things_path, class: "btn btn-primary" %>はこちらから
     </div>
 
-    <div class = "mx-auto">
+    <div class = "mx-auto timeline">
 
       <% @good_things.each do |gt| %>
-        <div class = "card w-50 mx-auto mt-4 shadow-lg">
-          <p><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg" %></p>
+        <div class = "card mx-auto text-center shadow-lg">
+          <p><%= attachment_image_tag @user, :profile_image, size:'100x100', fallback: "no_image.jpg" %></p>
           <p><%= gt.user.name %></p>
           <p><%= gt.title %></p>
           <p><%= gt.body %></p>
         </div>
         <% end %>
+        <%= paginate @good_things %>
 
     </div>
   </div>

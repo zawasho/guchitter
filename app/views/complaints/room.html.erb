@@ -1,26 +1,19 @@
 <div class = "container">
   <div class = "row complaint-room">
     <div class = "mx-auto mt-3 complaint-text">
-      <h1><strong>愚痴の間</strong></h1><br><br>
+      <h1><strong>愚痴の間<i class="far fa-tired"></i></strong></h1><br><br>
       <p>思いを吐き出して落ち着きましょう</p><br><br>
       <p>共感できる投稿にはボタンを押してましょう</p><br><br>
       <p>投稿はスクロールできます</p>
 
-      <!--<%#= search_form_for @q do |f| %>-->
-      <!--  <%#= f.label :name, "ユーザー名" %>-->
-      <!--  <%#= f.search_field :name_cont %>-->
-
-      <!--  <%#= f.submit "検索" %>-->
-      <!--<%# end %>-->
-      <thead>
       <br><br>
-        <tr>
-          <h3>投稿並び替え→</h3>
-          <th><%= sort_link(@q, :user_name, "名前順") %></th>
-        </tr>
-      </thead>
-
-    </div>
+        <!--ソート機能-->
+        <h3>投稿を並び替える<i class="fas fa-exchange-alt"></i></h3>
+        <p><%= sort_link(@q, :user_name, "名前順") %></p>
+        <p><%= sort_link(@q, :created_at, "投稿順") %></p>
+     </div>
+     
+    <!--投稿一覧表示-->
     <div class = "mx-auto text-center timeline">
 
       <% @complaints.each do |complaint| %>
@@ -28,7 +21,7 @@
       <div class = "card mx-auto shadow-lg">
         <table>
           <tr>
-            <p><%= attachment_image_tag complaint.user, :profile_image, size:'100x100', fallback: "no_image.jpg" %></p>
+            <p><%= attachment_image_tag complaint.user, :profile_image, size:'80x80', fallback: "no_image.jpg" %></p>
             <p><%= complaint.user.name %></p>
           </tr>
         </table>
@@ -45,7 +38,7 @@
 
         <!--非同期通信部分テンプレート-->
         <div id = "complaint_<%= complaint.id %>">
-          <div class = "cheer-btn"><%= render "cheers/cheer-btn", complaint: complaint %></div>
+          <div class = "cheer-btn mx-auto"><%= render "cheers/cheer-btn", complaint: complaint %></div>
         </div>
 
       </div>

@@ -29,8 +29,9 @@ class ComplaintsController < ApplicationController
   end
 
   def room
-    # sort_key = params[:q][:name]
+     # ransack使用宣言
     @q = Complaint.ransack(params[:q])
+    
     if params[:q].present?
       @q = Complaint
         .joins(:user)
@@ -38,14 +39,10 @@ class ComplaintsController < ApplicationController
         .ransack(params[:q])
       @complaints = @q.result
     else
-     
       @complaints = Complaint.page(params[:page]).reverse_order
     end
-   
-
+    
     @user = current_user
-    # @q = User.ransack(params[:q])
-    # @users = @q.result(distinct: true)
   end
 
   def edit
