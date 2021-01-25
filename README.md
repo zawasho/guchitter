@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Share Diary
 
-Things you may want to cover:
+## サイト概要
+Twitterのように呟けるアプリ。日常の嫌なことや辛かったこと、最近あった楽しかったことや嬉しかったことを呟き、シェアできます。
 
-* Ruby version
+### サイトテーマ
+日記とSNSの中間的な存在のアプリ。両者のいいとこ取りができるアプリ。
 
-* System dependencies
+### テーマを選んだ理由
+　Twitterは楽しかったことなどを自由にツイートでき、たくさんの人とシェアできるが、見知らぬ人から誹謗中傷や嘘つき呼ばわりされることもある。日記は誹謗中傷等の心配はないが、辛いことなどをたくさんの人とシェアすることができない。
+　
+ 一長一短の両者のいいとこ取りができるサービスを作ることができれば、ストレスを解消したい方々の役に立てるのではないかと考えました。
 
-* Configuration
+### ターゲットユーザ
+若者・悩んでいる人
 
-* Database creation
+### 主な利用シーン
+誰かに愚痴を吐き出したいがTwitter等でトラブルに巻き込まれたくない時
+面白い話を思いついたり、いい事が起こり、誰かに見て欲しい時
 
-* Database initialization
 
-* How to run the test suite
+## 設計書
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## 機能一覧
+https://docs.google.com/spreadsheets/d/16UjnfTAtl97HDJ0IP9Bzp39rVMiP3-ypLJwF_4X4tKE/edit#gid=0
 
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
