@@ -29,19 +29,19 @@ class ComplaintsController < ApplicationController
   end
 
   def room
-     # ransack使用宣言
+    # ransack使用宣言
     @q = Complaint.ransack(params[:q])
-    
+
     if params[:q].present?
-      @q = Complaint
-        .joins(:user)
-        .page(params[:page])
-        .ransack(params[:q])
+      @q = Complaint.
+        joins(:user).
+        page(params[:page]).
+        ransack(params[:q])
       @complaints = @q.result
     else
       @complaints = Complaint.page(params[:page]).reverse_order
     end
-    
+
     @user = current_user
   end
 
@@ -49,9 +49,9 @@ class ComplaintsController < ApplicationController
   end
 
   def destroy
-    c = Complaint.find(params[:id])
-    c.destroy
-    redirect_to room_complaints_path
+    complaint = Complaint.find(params[:id])
+    complaint.destroy
+    redirect_to user_path
   end
 
   private
@@ -59,4 +59,6 @@ class ComplaintsController < ApplicationController
   def complaint_params
     params.require(:complaint).permit(:title, :body, :profile_image)
   end
+
+
 end

@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :complaints, dependent: :destroy
   has_many :good_things, dependent: :destroy
-  
+
   attachment :profile_image
-  
-  validates :name, :email, presence: true 
+
+  validates :name, :email, presence: true
 end

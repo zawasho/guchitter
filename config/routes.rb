@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cheers, only: %i[create destroy]
+  resources :cheers, only: %i(create destroy)
 
-  resources :favorites, only: %i[create destroy]
+  resources :favorites, only: %i(create destroy)
 end

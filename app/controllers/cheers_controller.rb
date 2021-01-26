@@ -1,11 +1,8 @@
 class CheersController < ApplicationController
-
   def create
     @complaint = Complaint.find(params[:complaint_id])
     cheer = current_user.cheers.new(complaint_id: params[:complaint_id])
     cheer.save
-
-
   end
 
   def destroy

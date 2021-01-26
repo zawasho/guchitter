@@ -30,7 +30,9 @@
           <p><%= gt.title %></p>
           <p><%= gt.body %></p>
           <p><%= gt.created_at %></p>
-          <%= link_to "削除", good_thing_path(gt.id), method: :delete %>
+          <% if @good_thing_id = current_user.id %>
+            <%= link_to "削除", good_thing_path(gt.id), method: :delete %>
+          <% end %>
       　</tr>
 
         <!--非同期通信部分テンプレート-->

@@ -31,9 +31,6 @@
           <p><%= complaint.title %></p>
           <p><%= complaint.body %></p>
           <p><%= complaint.created_at %></p>
-          <% if @user_id = current_user.id %>
-            <%= link_to "削除", complaint_path(complaint.id), method: :delete %>
-          <% end %>
       　</tr>
 
         <!--非同期通信部分テンプレート-->
