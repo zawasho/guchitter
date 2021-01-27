@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
+  
    before_action :authenticate_user!
 
   def show
     @user = User.find(params[:id])
-    @complaints = @user.complaints.order('id DESC').limit(3)
-    @good_things = @user.good_things.order('id DESC').limit(3)
+    # @complaints = @user.complaints.order('id DESC').limit(3)
+    # @good_things = @user.good_things.order('id DESC').limit(3)
   end
 
   def edit
@@ -21,11 +22,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    complaint = Complaint.find(params[:id])
-    complaint.destroy
-    redirect_to root_path
-  end
+  # def destroy
+  #   complaint = Complaint.find(params[:id])
+  #   complaint.destroy
+  #   redirect_to room_complaints_path
+  # end
 
   private
 

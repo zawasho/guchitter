@@ -1,14 +1,23 @@
 <div class = "container">
   <div class = "row">
-    <div class = "mx-auto">
+    <div class = "mx-auto text-center post-index">
       <h1>皆様の愚痴</h1><br><br>
-      <%= link_to "愚痴の間", room_complaints_path, class: "btn btn-primary" %>はこちらから
+      <%= link_to "愚痴の間", room_complaints_path, class: "btn btn-danger" %>はこちらから
+      <p>(いいねボタン,投稿並び替えは愚痴の間へお越しください)</p>
+      <h4 class = "famous-saying">
+        <% famous = ['笑うことだけが人間に許された唯一の特権　by松本人志',
+                    '少し悲しくないと面白くないんかもしれへんな　by松本人志',
+                    '人を信じよ、しかし、その百倍も自らを信じよ　by手塚治虫',
+                    '心配事の９８％は、取り越し苦労だ　by藤村正宏'] %>
+        <%= famous[rand(0...famous.count)] %>
+      </h4>
     </div>
+
     <div class = "mx-auto timeline">
 
       <% @complaints.each do |c| %>
         <div class = "card mx-auto text-center shadow-lg">
-          <p><%= attachment_image_tag c.user, :profile_image, size:'100x100', fallback: "no_image.jpg" %></p>
+          <p><%= attachment_image_tag c.user, :profile_image, size:'80x80', fallback: "no_image.jpg" %></p>
           <p><%= c.user.name %></p>
           <p><%= c.title %></p>
           <p><%= c.body %></p>

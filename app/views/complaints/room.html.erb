@@ -3,7 +3,7 @@
     <div class = "mx-auto mt-3 complaint-text">
       <h1><strong>愚痴の間<i class="far fa-tired"></i></strong></h1><br><br>
       <p>思いを吐き出して落ち着きましょう</p><br><br>
-      <p>共感できる投稿にはボタンを押してましょう</p><br><br>
+      <p>共感できる投稿にはボタンを押してみましょう</p><br><br>
       <p>投稿はスクロールできます</p>
 
       <br><br>
@@ -12,7 +12,7 @@
         <p><%= sort_link(@q, :user_name, "名前順") %></p>
         <p><%= sort_link(@q, :created_at, "投稿順") %></p>
      </div>
-     
+
     <!--投稿一覧表示-->
     <div class = "mx-auto text-center timeline">
 
@@ -37,6 +37,7 @@
         <div id = "complaint_<%= complaint.id %>">
           <div class = "cheer-btn mx-auto"><%= render "cheers/cheer-btn", complaint: complaint %></div>
         </div>
+        <%= link_to "詳細へ", complaint_path(complaint.id) %>
 
       </div>
       <% end %>

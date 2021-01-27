@@ -1,2 +1,23 @@
-<h1>GoodThings#show</h1>
-<p>Find me in app/views/good_things/show.html.erb</p>
+<div class = "container">
+
+    <div class = "row mx-auto text-center">
+      <h2 class = "mx-auto text-center detail-text">投稿詳細</h2><br><br>
+    </div>
+    <div class = "card w-50 mx-auto text-center mt-4 shadow-lg">
+         <table>
+          <tr>
+            <p><%= attachment_image_tag @good_thing.user, :profile_image, size:'80x80', fallback: "no_image.jpg" %></p>
+            <p><%= @good_thing.user.name %></p>
+          </tr>
+        </table>
+
+        <tr>
+          <td><%= @good_thing.title %></td>
+          <td><%= @good_thing.body %></td>
+          <% if @good_thing.user_id == current_user.id %>
+            <%= link_to "削除", g_path(@good_thing.id), class: "btn btn-danger col-xs-5", method: :delete, data: {confirm: "削除しますか？"} %>
+          <% end %>
+        </tr>
+    </div>
+
+  </div>
