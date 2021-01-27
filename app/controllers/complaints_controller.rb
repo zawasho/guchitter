@@ -1,6 +1,6 @@
 class ComplaintsController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_correct_user, {only: [:edit,:update,:destroy]}
+  before_action :ensure_correct_user, { only: [:edit, :update, :destroy] }
 
   def new
     @complaint = Complaint.new
@@ -62,10 +62,8 @@ class ComplaintsController < ApplicationController
 
   def ensure_correct_user
     @complaint = Complaint.find_by(id: params[:id])
-     if @complaint.user_id != current_user.id
-        redirect_to room_complaints_path
-     end
+    if @complaint.user_id != current_user.id
+      redirect_to room_complaints_path
+    end
   end
-
-
 end

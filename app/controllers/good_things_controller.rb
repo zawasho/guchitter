@@ -22,12 +22,12 @@ class GoodThingsController < ApplicationController
     @good_things = GoodThing.page(params[:page]).reverse_order
     @user = current_user
   end
-  
+
   def show
     @good_thing = GoodThing.find(params[:id])
     @user = current_user
   end
-    
+
   def space
     # ransack使用宣言
 
