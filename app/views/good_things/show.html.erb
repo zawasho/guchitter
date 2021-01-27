@@ -10,12 +10,12 @@
             <p><%= @good_thing.user.name %></p>
           </tr>
         </table>
-
+        <br>
         <tr>
-          <td><%= @good_thing.title %></td>
-          <td><%= @good_thing.body %></td>
+          <p><%= @good_thing.title %></p>
+          <p><%= @good_thing.body %></p>
           <% if @good_thing.user_id == current_user.id %>
-            <%= link_to "削除", g_path(@good_thing.id), class: "btn btn-danger col-xs-5", method: :delete, data: {confirm: "削除しますか？"} %>
+            <%= link_to "削除", good_thing_path(@good_thing.id), class: "btn btn-danger col-xs-5", method: :delete, data: {confirm: "削除しますか？"} %>
           <% end %>
         </tr>
     </div>

@@ -10,10 +10,10 @@
             <p><%= @complaint.user.name %></p>
           </tr>
         </table>
-
+        <br>
         <tr>
-          <td><%= @complaint.title %></td>
-          <td><%= @complaint.body %></td>
+          <p><%= @complaint.title %></p>
+          <p><%= @complaint.body %></p>
           <% if @complaint.user_id == current_user.id %>
             <%= link_to "削除", complaint_path(@complaint.id), class: "btn btn-danger col-xs-5", method: :delete, data: {confirm: "削除しますか？"} %>
           <% end %>
