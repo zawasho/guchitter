@@ -51,7 +51,7 @@ class ComplaintsController < ApplicationController
   def destroy
     complaint = Complaint.find(params[:id])
     complaint.destroy
-    redirect_to room_complaints_path
+    redirect_to page_user_path
   end
 
   private

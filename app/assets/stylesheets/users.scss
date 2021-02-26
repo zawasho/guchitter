@@ -34,3 +34,22 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+.page-title {
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
+}
+
+.pages {
+  text-align: center;
+  width: 100%;
+}
+
+.complaints-page {
+  display: inline-block;
+}
+
+.good_things-page {
+  display: inline-block;
+}
+

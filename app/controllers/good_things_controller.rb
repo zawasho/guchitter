@@ -51,7 +51,7 @@ class GoodThingsController < ApplicationController
   def destroy
     gt = GoodThing.find(params[:id])
     gt.destroy
-    redirect_to space_good_things_path
+    redirect_to page_user_path
   end
 
   private

@@ -5,31 +5,54 @@ describe '投稿のテスト' do
 
   describe 'トップ画面(root_path)のテスト' do
     before do
-      visit root_path
+      user_a = FactoryBot.create(:user, email: 'a@example.com', password: 'aaaaaa')
     end
+    context 'ユーザーAがログインしている時' do
+      before do
+        visit user_session_path
+        fill_in 'user_email', with: 'a@example.com'
+        fill_in 'user_password', with: 'aaaaaa'
+        click_button 'ログイン'
+      end
 
-    context '表示の確認' do
+      it 'トップ画面へ遷移する' do
+        expect(page).to have_link "", href: root_path
+      end
+
       it 'トップ画面(root_path)に「Share Diaryへようこそ！」が表示されているか' do
         expect(page).to have_content 'Share Diaryへようこそ！'
       end
+
       it 'root_pathがトップ画面(ルートパス)であるか' do
         expect(current_path).to eq('/')
       end
-    end
-  end
 
-  describe '投稿画面のテスト(愚痴)' do
-    before do
-      visit new_complaint_path
+
+
+        it 'new_complaint_pathが"/complaints/new"であるか' do
+          # 新規投稿画面に移動する
+          visit new_complaint_path
+          
+          # パスが正しいことを確認する
+          expect(current_path).to eq('/complaints/new')
+          
+          # 投稿ボタンが表示されているか確認する
+          expect(page).to have_button '愚痴る！'
+          
+        end
+
+        # it '投稿ボタンが表示されているか' do
+        #   visit new_complaint_path
+        #   expect(page).to have_button '愚痴る！'
+        # end
+
+
+
     end
 
     context '表示の確認' do
-      it 'new_complaint_pathが"/complaints/new"であるか' do
-        expect(current_path).to eq('/complaints/new')
-      end
-      it '投稿ボタンが表示されているか' do
-        expect(page).to have_button '愚痴る'
-      end
     end
+
   end
+
 end

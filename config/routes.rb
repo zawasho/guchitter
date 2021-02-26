@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/about' => 'homes#about'
 
   resources :users do
+    member do
+      get '/page' => 'users#page'
+    end
   end
 
   resources :complaints do

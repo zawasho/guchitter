@@ -1,0 +1,32 @@
+<div class = "container">
+  <div class = "row">
+    <h2 class = "page-title">あなたの投稿</h2>
+    <div class = "mx-auto text-center pages">
+      
+      
+      <div class = "complaints-page">
+        <h2 class = "page-title">愚痴</h2>
+        <% @complaints.each do |complaint| %>
+          <div class = "card mx-auto text-center shadow-lg">
+            <p><%= complaint.title %></p>
+            <p><%= complaint.body %></p>
+            <p><%= complaint.created_at %></p>
+            <%= link_to "削除", complaint_path(complaint.id), class: "btn btn-danger col-xs-5", method: :delete, data: {confirm: "削除しますか？"} %>
+          </div>
+        <% end %>
+      </div>
+      
+      <div class = "good_things-page">
+        <h2 class = "page-title">良かったこと</h2>
+        <% @good_things.each do |good_thing| %>
+          <div class = "card mx-auto text-center shadow-lg">
+            <p><%= good_thing.title %></p>
+            <p><%= good_thing.body %></p>
+            <p><%= good_thing.created_at %></p>
+            <%= link_to "削除", good_thing_path(good_thing.id), class: "btn btn-danger col-xs-5", method: :delete, data: {confirm: "削除しますか？"} %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

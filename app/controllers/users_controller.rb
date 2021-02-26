@@ -7,6 +7,11 @@ class UsersController < ApplicationController
     # @good_things = @user.good_things.order('id DESC').limit(3)
   end
 
+  def page
+    @complaints = current_user.complaints
+    @good_things = current_user.good_things
+  end
+
   def edit
     @user = User.find(params[:id])
   end
