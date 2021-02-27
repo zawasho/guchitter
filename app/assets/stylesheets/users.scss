@@ -35,6 +35,12 @@
   vertical-align: middle;
 }
 
+.page-title-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .page-title {
   background-color:rgba(255,255,255,0.8);
   background-blend-mode:lighten;
@@ -47,9 +53,11 @@
 
 .complaints-page {
   display: inline-block;
+  overflow: scroll;
 }
 
 .good_things-page {
   display: inline-block;
+  overflow: scroll;
 }
 
