@@ -10,10 +10,13 @@
       <div class = "complaints-page">
         <h2 class = "page-title">愚痴<i class="far fa-tired"></i></h2>
         <% @complaints.each do |complaint| %>
-          <div class = "card mx-auto text-center shadow-lg">
+          <div class = "card mx-auto text-center my-tweet shadow-lg">
             <p><%= complaint.title %></p>
             <p><%= complaint.body %></p>
             <p><%= complaint.created_at %></p>
+            <div id = "complaint_<%= complaint.id %>">
+              <div class = "cheer-btn mx-auto"><%= render "cheers/cheer-btn", complaint: complaint %></div>
+            </div>
             <%= link_to "削除", complaint_path(complaint.id), class: "btn btn-danger col-xs-5", method: :delete, data: {confirm: "削除しますか？"} %>
           </div>
         <% end %>
@@ -22,10 +25,13 @@
       <div class = "good_things-page">
         <h2 class = "page-title">良かったこと<i class="far fa-smile-beam"></i></h2>
         <% @good_things.each do |good_thing| %>
-          <div class = "card mx-auto text-center shadow-lg">
+          <div class = "card mx-auto text-center my-tweet shadow-lg">
             <p><%= good_thing.title %></p>
             <p><%= good_thing.body %></p>
             <p><%= good_thing.created_at %></p>
+            <div id = "good_thing_<%= good_thing.id %>">
+              <div class = "favorite-btn"><%= render "favorites/favorite-btn", good_thing: good_thing %></div>
+            </div>
             <%= link_to "削除", good_thing_path(good_thing.id), class: "btn btn-danger col-xs-5", method: :delete, data: {confirm: "削除しますか？"} %>
           </div>
         <% end %>

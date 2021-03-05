@@ -1,8 +1,8 @@
 <!--いいね機能(ポジティブ)-->
-    <% if gt.favorited_by?(current_user) %>
+    <% if good_thing.favorited_by?(current_user) %>
     <table>
       <tr>
-        <td><%= link_to gt.favorites.count, favorite_path(gt), method: :delete, remote: true, :class => "fas fa-thumbs-up" %></td>
+        <td><%= link_to good_thing.favorites.count, favorite_path(good_thing), method: :delete, remote: true, :class => "fas fa-thumbs-up" %></td>
         <td>いいね！</td>
       </tr>
     </table>
@@ -10,7 +10,7 @@
     <% else %>
     <table>
       <tr>
-        <td><%= link_to gt.favorites.count, favorites_path(good_thing_id: gt.id), method: :post, remote: true, :class => "far fa-thumbs-up" %></td>
+        <td><%= link_to good_thing.favorites.count, favorites_path(good_thing_id: good_thing.id), method: :post, remote: true, :class => "far fa-thumbs-up" %></td>
         <td>いいね！</td>
       </tr>
     </table>

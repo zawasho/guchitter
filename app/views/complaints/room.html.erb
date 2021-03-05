@@ -14,11 +14,11 @@
      </div>
 
     <!--投稿一覧表示-->
-    <div class = "mx-auto text-center timeline">
+    <div class = "mx-auto timeline">
 
       <% @complaints.each do |complaint| %>
 
-      <div class = "card mx-auto shadow-lg">
+      <div class = "card shadow-lg complaint-tweet">
         <table>
           <tr>
             <p><%= attachment_image_tag complaint.user, :profile_image, size:'80x80', fallback: "no_image.jpg" %></p>
@@ -35,7 +35,7 @@
 
         <!--非同期通信部分テンプレート-->
         <div id = "complaint_<%= complaint.id %>">
-          <div class = "cheer-btn mx-auto"><%= render "cheers/cheer-btn", complaint: complaint %></div>
+          <div class = "cheer-btn"><%= render "cheers/cheer-btn", complaint: complaint %></div>
         </div>
         <%= link_to "詳細へ", complaint_path(complaint.id) %>
 

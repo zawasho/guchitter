@@ -28,14 +28,11 @@
               <td><%= @user.email %></td>
             </tr>
             <%= link_to "変える", edit_user_path, class: "btn btn-primary col-xs-5" %>
+            <%= link_to "自分の投稿を見る", page_user_path, class: "btn btn-info col-xs-5" %>
           </tbody>
         </table>
       </div>
     </div>
-  </div>
-  
-  <div class = "text-center">
-    <%= link_to "投稿を見る", page_user_path, class: "btn btn-primary col-xs-5" %>
   </div>
 
 </div>

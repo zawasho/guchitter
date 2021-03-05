@@ -13,30 +13,30 @@
           <p><%= sort_link(@q, :created_at, "投稿順") %></p>
 
     </div>
-    <div class = "mx-auto text-center timeline">
+    <div class = "mx-auto timeline">
 
-      <% @good_things.each do |gt| %>
+      <% @good_things.each do |good_thing| %>
 
-      <div class = "card mx-auto shadow-lg">
+      <div class = "card shadow-lg good-t">
         <table>
           <tr>
             <p><%= attachment_image_tag @user, :profile_image, size:'80x80', fallback: "no_image.jpg" %></p>
-            <p><%= gt.user.name %></p>
+            <p><%= good_thing.user.name %></p>
           </tr>
         </table>
 
         <br>
         <tr>
-          <p><%= gt.title %></p>
-          <p><%= gt.body %></p>
-          <p><%= gt.created_at %></p>
+          <p><%= good_thing.title %></p>
+          <p><%= good_thing.body %></p>
+          <p><%= good_thing.created_at %></p>
       　</tr>
 
         <!--非同期通信部分テンプレート-->
-        <div id = "gt_<%= gt.id %>">
-          <div class = "favorite-btn"><%= render "favorites/favorite-btn", gt: gt %></div>
+        <div id = "good_thing_<%= good_thing.id %>">
+          <div class = "favorite-btn"><%= render "favorites/favorite-btn", good_thing: good_thing %></div>
         </div>
-        <%= link_to "詳細へ", good_thing_path(gt.id) %>
+        <%= link_to "詳細へ", good_thing_path(good_thing.id) %>
       </div>
       <% end %>
 
